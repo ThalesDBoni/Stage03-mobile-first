@@ -14,12 +14,19 @@
     --bgc-main: #EFF1FF;
 }
 
+body {
+    background: var(--bgc-main);
+}
+
 .page {
-    margin: 0 auto;
+    
 }
 
 header {
     background: var(--bgc-header);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header img {
@@ -28,6 +35,7 @@ header img {
 
 header h1 {
     font-family: var(--ff-title);
+    width: 100%;
     color: white;
     font-weight: 400;
     font-size: var(--fs-title);
@@ -39,9 +47,13 @@ header h1 {
 }
 
 main {
-    background: var(--bgc-main);
     padding: 1.4rem 3.2rem 6.0rem;
-
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 39rem;
+    gap: 3.2rem;
 }
 
 main p {
@@ -49,12 +61,13 @@ main p {
     font-family: var(--ff-texting);
     color: #23053a;
     font-size: 2rem;
-    margin-bottom: 6.3rem;
+    margin-bottom: 3rem;
 }
 
 .card {
     position: relative;
     display: inline-block;
+    animation: downtop 700ms;
 }
 
 .card h2 {
@@ -72,4 +85,30 @@ main p {
     line-height: 3.4rem;
     border-radius: 2rem;
     letter-spacing: 0.1rem;
+
+    animation: topdown 700ms;
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
